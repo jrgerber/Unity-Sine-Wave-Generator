@@ -8,7 +8,7 @@ using UnityEngine;
 public abstract class SineWaveBase : MonoBehaviour
 {
     [SerializeField]
-    protected SineWaveGenerator waveGenerator;
+    protected WaveGeneratorBase waveGenerator;
 
     // Update is called once per frame
     void Update()

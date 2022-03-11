@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ef1210a854ba54a99fd99fa902b016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveGenerator: {fileID: 341146801}
+  waveGenerator: {fileID: 1558764915}
   oscillateAxisX: 0
   oscillateAxisY: 1
   oscillateAxisZ: 0
@@ -233,7 +233,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 341146802}
+  - {fileID: 1558764916}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -370,6 +370,86 @@ MonoBehaviour:
   oscillateAxisX: 1
   oscillateAxisY: 1
   oscillateAxisZ: 1
+--- !u!1001 &337824662
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1558764916}
+    m_Modifications:
+    - target: {fileID: 2837049771922752836, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: amplitude
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752836, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: degreesPerSecond
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752836, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: degreesPhaseShift
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752837, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_Name
+      value: SineWaveGenerator2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+--- !u!114 &337824663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2837049771922752836, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+  m_PrefabInstance: {fileID: 337824662}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e785b8b01b9337f4b9a571c99ffdaeeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &341146801 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2837049771922752836, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
@@ -381,11 +461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e785b8b01b9337f4b9a571c99ffdaeeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &341146802 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
-  m_PrefabInstance: {fileID: 2837049771726371317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &472470599 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2837049771922752836, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
@@ -633,6 +708,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 326242876}
     m_Modifications:
+    - target: {fileID: 2837049771922752836, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
+      propertyPath: degreesPhaseShift
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 2837049771922752837, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
       propertyPath: m_Name
       value: SineWaveGenerator
@@ -847,16 +926,101 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
---- !u!1001 &2837049771726371317
+--- !u!1001 &1558764914
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 43838459}
     m_Modifications:
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280439620337924634, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: m_Name
+      value: AddWaveGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 5310479954231607655, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: waveGenerators.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5310479954231607655, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: waveGenerators.Array.data[0]
+      value: 
+      objectReference: {fileID: 341146801}
+    - target: {fileID: 5310479954231607655, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+      propertyPath: waveGenerators.Array.data[1]
+      value: 
+      objectReference: {fileID: 337824663}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+--- !u!114 &1558764915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5310479954231607655, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+  m_PrefabInstance: {fileID: 1558764914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473dc10aff854e44483035cb45e844b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1558764916 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3426635230541156148, guid: 8009330bdbe0fd643bca58106164f50f, type: 3}
+  m_PrefabInstance: {fileID: 1558764914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2837049771726371317
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1558764916}
+    m_Modifications:
     - target: {fileID: 2837049771922752837, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
       propertyPath: m_Name
-      value: SineWaveGenerator
+      value: SineWaveGenerator1
       objectReference: {fileID: 0}
     - target: {fileID: 2837049771922752839, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
       propertyPath: m_RootOrder

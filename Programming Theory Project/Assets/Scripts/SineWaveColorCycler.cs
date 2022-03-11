@@ -5,19 +5,19 @@ using UnityEngine;
 /// <summary>
 /// Cycles the color of a <c>GameObject</c>.
 /// </summary>
-public class SineWaveColorCycler : SineWaveBase
+public class SineWaveColorCycler : MonoBehaviour
 {
     [SerializeField]
-    private bool cycleRed = true;
+    private WaveGeneratorBase redWaveGenerator;
 
     [SerializeField]
-    private bool cycleGreen = true;
+    private WaveGeneratorBase greenWaveGenerator;
 
     [SerializeField]
-    private bool cycleBlue = true;
+    private WaveGeneratorBase blueWaveGenerator;
 
     [SerializeField]
-    private bool cycleAlpha = false;
+    private WaveGeneratorBase alphaWaveGenerator;
 
     private MeshRenderer meshRenderer;
 
@@ -26,16 +26,61 @@ public class SineWaveColorCycler : SineWaveBase
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    protected override void WaveUpdate(float waveOutput)
+    private void Update()
     {
-        // waveOutput swings from -Amplitude to +Amplitude.  Color values are from 0 to 1.  Adjust the waveOutput value to fit within 0.0f to 1.0f.
-        float amplitude = base.waveGenerator.Amplitude;
-        float adjustedOutput = (waveOutput + amplitude) / (amplitude * 2);
+        Color result = new Color();
+        if (redWaveGenerator != null)
+        {
+            // Output swings from -Amplitude to +Amplitude.
+            // Color values are from 0 to 1.
+            // Adjust the waveOutput value to fit within 0.0f to 1.0f.
+            float amplitude = redWaveGenerator.Amplitude;
+            result.r = (redWaveGenerator.Output + amplitude) / (amplitude * 2);
+        }
+        else
+        {
+            result.r = meshRenderer.material.color.r;
+        }
 
-        meshRenderer.material.color = new Color(
-            cycleRed ? adjustedOutput : meshRenderer.material.color.r,
-            cycleGreen ? adjustedOutput : meshRenderer.material.color.g,
-            cycleBlue ? adjustedOutput : meshRenderer.material.color.b,
-            cycleAlpha ? adjustedOutput : meshRenderer.material.color.a);
+        if (greenWaveGenerator != null)
+        {
+            // Output swings from -Amplitude to +Amplitude.
+            // Color values are from 0 to 1.
+            // Adjust the waveOutput value to fit within 0.0f to 1.0f.
+            float amplitude = greenWaveGenerator.Amplitude;
+            result.r = (greenWaveGenerator.Output + amplitude) / (amplitude * 2);
+        }
+        else
+        {
+            result.g = meshRenderer.material.color.g;
+        }
+
+        if (blueWaveGenerator != null)
+        {
+            // Output swings from -Amplitude to +Amplitude.
+            // Color values are from 0 to 1.
+            // Adjust the waveOutput value to fit within 0.0f to 1.0f.
+            float amplitude = blueWaveGenerator.Amplitude;
+            result.r = (blueWaveGenerator.Output + amplitude) / (amplitude * 2);
+        }
+        else
+        {
+            result.b = meshRenderer.material.color.b;
+        }
+
+        if (alphaWaveGenerator != null)
+        {
+            // Output swings from -Amplitude to +Amplitude.
+            // Color values are from 0 to 1.
+            // Adjust the waveOutput value to fit within 0.0f to 1.0f.
+            float amplitude = alphaWaveGenerator.Amplitude;
+            result.r = (alphaWaveGenerator.Output + amplitude) / (amplitude * 2);
+        }
+        else
+        {
+            result.a = meshRenderer.material.color.a;
+        }
+
+        meshRenderer.material.color = result;
     }
 }

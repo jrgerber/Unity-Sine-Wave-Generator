@@ -10,25 +10,22 @@ using UnityEngine;
 ///     1. Give values for amplitude and degreesPerSecond
 ///     2. Retrieve SineWaveGenerator.Output and use the value to control an aspect of a GameObject such as movement, color, etc.
 /// </example>
-public class SineWaveGenerator : MonoBehaviour
+public class SineWaveGenerator : WaveGeneratorBase
 {
-    /// <summary>
-    /// Amplitude of the sine wave.
-    /// </summary>
-    /// <remarks>
-    /// A value of 1.0f will generate outputs of -1.0f to 1.0f
-    /// </remarks>
-    [SerializeField]
-    private float amplitude = 1.0f;
-
     /// <summary>
     /// Number of degrees to advance per second.
     /// </summary>
     [SerializeField]
-    private float degreesPerSecond = 180.0f;
+    protected float degreesPerSecond = 180.0f;
+
+    /// <summary>
+    /// Number of degrees to phase shift.
+    /// </summary>
+    [SerializeField]
+    protected float degreesPhaseShift = 0.0f;
 
     [SerializeField]
-    private float elapsedSeconds = 0.0f;
+    protected float elapsedSeconds = 0.0f;
 
     /// <summary>
     /// Mathf.Sin() accepts radians only, so we convert degreesPerSecond to radians for runtime.
@@ -36,26 +33,9 @@ public class SineWaveGenerator : MonoBehaviour
     private float radiansPerSecond;
 
     /// <summary>
-    /// Amplitude of the sine wave.
+    /// Mathf.Sin() accepts radians only, so we convert degreesPhaseShift to radians for runtime.
     /// </summary>
-    public float Amplitude
-    {
-        get
-        {
-            return amplitude;
-        }
-        set
-        {
-            if (amplitude < 0)
-            {
-                Debug.LogError("Amplitude must be positive values only.  Use PhaseShiftDegrees = 180 instead.");
-            }
-            else
-            {
-                amplitude = value;
-            }
-        }
-    }
+    private float radiansPhaseShift;
 
     /// <summary>
     /// Number of degrees to advance per second.
@@ -74,13 +54,29 @@ public class SineWaveGenerator : MonoBehaviour
     }
 
     /// <summary>
-    /// The value of the sine wave for the current point in time.
+    /// Number of degrees of phase shift.
     /// </summary>
-    public float Output
+    public float DegreesPhaseShift
     {
         get
         {
-            return amplitude * Mathf.Sin(elapsedSeconds * radiansPerSecond);
+            return degreesPhaseShift;
+        }
+        set
+        {
+            degreesPhaseShift = value;
+            radiansPhaseShift = DegreesToRadians(degreesPhaseShift);
+        }
+    }
+
+    /// <summary>
+    /// The value of the sine wave for the current point in time.
+    /// </summary>
+    public override float Output
+    {
+        get
+        {
+            return amplitude * Mathf.Sin((elapsedSeconds * radiansPerSecond) + radiansPhaseShift);
         }
     }
 
@@ -90,6 +86,7 @@ public class SineWaveGenerator : MonoBehaviour
     private void Start()
     {
         radiansPerSecond = DegreesToRadians(degreesPerSecond);
+        radiansPhaseShift = DegreesToRadians(degreesPhaseShift);
     }
 
     /// <summary>
@@ -101,7 +98,6 @@ public class SineWaveGenerator : MonoBehaviour
         {
             elapsedSeconds += Time.deltaTime;
         }
-
     }
 
     /// <summary>
@@ -110,15 +106,5 @@ public class SineWaveGenerator : MonoBehaviour
     public void Reset()
     {
         elapsedSeconds = 0.0f;
-    }
-
-    /// <summary>
-    /// Formula to convert degrees to radians.
-    /// </summary>
-    /// <param name="degrees">Degrees to convert</param>
-    /// <returns>Radians</returns>
-    private static float DegreesToRadians(float degrees)
-    {
-        return degrees / 180.0f * Mathf.PI;
     }
 }

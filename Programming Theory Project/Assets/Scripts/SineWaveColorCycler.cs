@@ -61,7 +61,7 @@ public class SineWaveColorCycler : MonoBehaviour
             // Color values are from 0 to 1.
             // Adjust the waveOutput value to fit within 0.0f to 1.0f.
             float amplitude = blueWaveGenerator.Amplitude;
-            result.r = (blueWaveGenerator.Output + amplitude) / (amplitude * 2);
+            result.b = (blueWaveGenerator.Output + amplitude) / (amplitude * 2);
         }
         else
         {
@@ -74,7 +74,7 @@ public class SineWaveColorCycler : MonoBehaviour
             // Color values are from 0 to 1.
             // Adjust the waveOutput value to fit within 0.0f to 1.0f.
             float amplitude = alphaWaveGenerator.Amplitude;
-            result.r = (alphaWaveGenerator.Output + amplitude) / (amplitude * 2);
+            result.a = (alphaWaveGenerator.Output + amplitude) / (amplitude * 2);
         }
         else
         {

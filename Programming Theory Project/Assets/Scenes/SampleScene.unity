@@ -192,7 +192,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8f55a1e81be60304e8d28ad850f27c71, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -230,7 +230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43838454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1558764916}
@@ -249,11 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582b5ed08da3c6c44b8fd3732a5dcf28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveGenerator: {fileID: 791584034}
-  cycleRed: 1
-  cycleGreen: 0
-  cycleBlue: 0
-  cycleAlpha: 0
+  redWaveGenerator: {fileID: 341146801}
+  greenWaveGenerator: {fileID: 0}
+  blueWaveGenerator: {fileID: 337824663}
+  alphaWaveGenerator: {fileID: 0}
 --- !u!1 &326242872
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +306,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1a59ec10cbe710542b104144014970ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -379,7 +378,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2837049771922752836, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
       propertyPath: amplitude
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2837049771922752836, guid: ab40c36e37ba7074db5ce307e431df79, type: 3}
       propertyPath: degreesPerSecond
@@ -603,11 +602,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582b5ed08da3c6c44b8fd3732a5dcf28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveGenerator: {fileID: 791584034}
-  cycleRed: 1
-  cycleGreen: 1
-  cycleBlue: 1
-  cycleAlpha: 0
+  redWaveGenerator: {fileID: 0}
+  greenWaveGenerator: {fileID: 0}
+  blueWaveGenerator: {fileID: 0}
+  alphaWaveGenerator: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
